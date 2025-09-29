@@ -2,9 +2,9 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link href="/src/style.css" rel="stylesheet">
+    <link rel="" type="" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecommerce-vue</title>
+    <title>Portfolio</title>
   </head>
   <body>
     <div id="app">
@@ -12,5 +12,12 @@
     </div>
    
     <script type="module" src="/src/main.js"></script>
+    <script>
+    // Appliquer le thème avant le chargement de Vue pour éviter le flash
+    const theme = localStorage.getItem('theme') || 'dark'
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    }
+  </script>
   </body>
 </html>
