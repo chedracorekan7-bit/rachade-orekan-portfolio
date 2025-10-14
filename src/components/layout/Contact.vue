@@ -18,22 +18,23 @@
           <!-- Container pour bouton et réseaux sociaux -->
           <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end pt-6 gap-6 lg:gap-8">
             <!-- Bouton Envoyer -->
-            <button
-              type="submit"
-              class="bg-yellow-400 cursor-pointer hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-6 sm:px-8 lg:px-10 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 w-full sm:w-auto order-2 lg:order-1 flex items-center justify-center gap-2"
-            >
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-              </svg>
-              <span>Envoyer</span>
-            </button>
+            <div class="order-2 lg:order-1 w-[100px] sm:w-auto">
+              <Button 
+                text="Envoyer" 
+                variant="primary" 
+                size="md"
+                type="submit"
+                icon="<path d='M2.01 21L23 12 2.01 3 2 10l15 2-15 2z'/>"
+                @click="handleSubmit"
+              />
+            </div>
 
             <!-- Réseaux sociaux -->
             <div class="flex flex-col items-center lg:items-end order-1 lg:order-2 w-full lg:w-auto">
               <h4 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 
               </h4>
-              <div class="flex flex-wrap justify-center lg:justify-end gap-2 sm:gap-3 lg:gap-4">
+              <div class="flex flex-wrap justify-center lg:justify-end gap-3 sm:gap-4">
                 <button
                   v-for="(social, index) in socialLinks"
                   :key="index"
@@ -41,12 +42,12 @@
                   @click.prevent="handleSocialClick(social.url)"
                   :title="social.name"
                   :class="[
-                    'p-2.5 sm:p-3 lg:p-3.5 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 transform cursor-pointer border-2 border-transparent hover:border-white/20',
+                    'p-3 sm:p-3.5 lg:p-4 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 transform cursor-pointer border-2 border-transparent hover:border-white/20 flex items-center justify-center min-w-[48px] min-h-[48px] sm:min-w-[52px] sm:min-h-[52px] touch-manipulation',
                     social.bgClass,
                     social.hoverClass
                   ]"
                 >
-                  <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24" v-html="social.svg"></svg>
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white drop-shadow-sm flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" v-html="social.svg"></svg>
                 </button>
               </div>
             </div>
@@ -59,7 +60,14 @@
 <script setup>
 import SectionHeader from "../UI/SectionHeader.vue";
 import Input from "../UI/Input.vue";
+import Button from "../UI/Button.vue";
 import { ref } from "vue";
+
+const handleSubmit = (event) => {
+  event.preventDefault()
+  // Logique de soumission du formulaire
+  console.log('Formulaire soumis')
+}
 
 // Solution finale qui fonctionne dans tous les cas
 const handleSocialClick = (url) => {

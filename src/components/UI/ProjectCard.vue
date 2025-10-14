@@ -22,7 +22,7 @@
 
            <!-- Action Section -->
            <div class="px-4 sm:px-6 pb-3 sm:pb-4 flex justify-between items-center">
-            <a :href="liveLink" v-if="liveLink" class="text-secondary font-semibold hover:underline text-xs sm:text-sm transition-colors duration-200">Demo</a>
+            <a :href="liveLink" v-if="liveLink" class="text-secondary font-semibold hover:underline text-xs sm:text-sm transition-colors duration-200"></a>
             <a :href="codeLink" v-if="codeLink" class="text-secondary font-semibold hover:underline text-xs sm:text-sm transition-colors duration-200">Code</a>
            </div>
     </article>

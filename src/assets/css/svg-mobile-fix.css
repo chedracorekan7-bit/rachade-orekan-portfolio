@@ -1,0 +1,78 @@
+/* Optimisation du centrage des SVG sur mobile */
+
+/* Assure que tous les SVG maintiennent leur aspect ratio */
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Centrage parfait pour les conteneurs d'icônes */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Correction spécifique pour les icônes Iconify */
+.iconify {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+/* Assure le centrage sur tous les écrans mobiles */
+@media (max-width: 640px) {
+  /* Conteneurs flexbox pour icônes */
+  .flex.justify-center {
+    align-items: center;
+  }
+  
+  /* SVG dans les boutons */
+  button svg {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Icônes dans les cartes de services */
+  .service-item svg,
+  .service-item .iconify {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Correction pour les écrans très petits */
+@media (max-width: 375px) {
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+/* Optimisation des boutons pour mobile */
+@media (max-width: 640px) {
+  /* Espacement optimal entre boutons */
+  .flex.gap-3 {
+    gap: 0.875rem;
+  }
+  
+  /* Taille minimale pour les boutons tactiles */
+  button {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  /* Amélioration de la zone de clic */
+  button:not(.rounded-full) {
+    padding: 0.875rem 1.5rem;
+  }
+  
+  /* Boutons pleine largeur sur très petits écrans */
+  @media (max-width: 375px) {
+    .w-full.sm\:w-auto {
+      width: 100%;
+    }
+  }
+}

@@ -11,10 +11,10 @@
         <div 
           :class="getServiceClasses(element.id)"
         >
-          <div class="flex justify-center relative pt-6 sm:pt-8">
-            <div class="p-4 sm:p-5 lg:p-6 xl:p-7 relative bg-slate-900 dark:bg-white/10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <span class="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 xl:h-18 xl:w-18 m-auto border-2 border-yellow-300 absolute top-2 sm:top-2.5 lg:top-3 xl:top-3.5 left-2 sm:left-2.5 lg:left-3 xl:left-3.5 rounded-full inline-block z-[5] animate-pulse"></span>
-              <Icon :icon="element.icon" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-yellow-300 relative z-[10] drop-shadow-sm" />
+          <div class="flex justify-center items-center relative pt-6 sm:pt-8">
+            <div class="icon-container relative bg-slate-900 dark:bg-white/10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28">
+              <span class="absolute inset-1 border-2 border-yellow-300 rounded-full z-[5] animate-pulse"></span>
+              <Icon :icon="element.icon" class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-yellow-300 relative z-[10] drop-shadow-sm flex-shrink-0" />
             </div>
           </div>
           <div class="p-4 sm:p-5 lg:p-6 xl:p-8">

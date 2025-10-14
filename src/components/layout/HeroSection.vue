@@ -1,52 +1,76 @@
 <template>
-  <section id="hero" class="relative flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 dark:text-white">
+  <section
+    id="hero"
+    class="relative flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 dark:text-white"
+  >
     <!-- Background decorations -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[150px] sm:h-[180px] lg:h-[200px] -skew-x-12 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-yellow-300 opacity-20 dark:opacity-10 blur-[80px] sm:blur-[100px] left-2 sm:left-6 lg:left-10 top-0"></div>
-      <div class="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[150px] sm:h-[180px] lg:h-[200px] -skew-x-12 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-yellow-300 opacity-20 dark:opacity-10 blur-[80px] sm:blur-[100px] right-2 sm:right-6 lg:right-10 bottom-0"></div>
+      <div
+        class="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[150px] sm:h-[180px] lg:h-[200px] -skew-x-12 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-yellow-300 opacity-20 dark:opacity-10 blur-[80px] sm:blur-[100px] left-2 sm:left-6 lg:left-10 top-0"
+      ></div>
+      <div
+        class="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[150px] sm:h-[180px] lg:h-[200px] -skew-x-12 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-yellow-300 opacity-20 dark:opacity-10 blur-[80px] sm:blur-[100px] right-2 sm:right-6 lg:right-10 bottom-0"
+      ></div>
     </div>
-    
+
     <div class="relative z-10 w-full max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <!-- Content -->
         <div class="text-center lg:text-left order-2 lg:order-1">
-          <h1 class="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-            <span class="block sm:inline ">Salut, Je m'appelle<span class="text-yellow-400 block sm:inline ">Rachade.</span></span>
-            
+          <h1
+            class="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+          >
+            <span class="block sm:inline">Salut, Je m'appelle</span> &nbsp;
+            <div
+              class="text-secondary stroke-text text-stroke-primary dark:text-stroke-secondary"
+            >
+              Rachade.
+            </div>
           </h1>
-          <p class="text-base sm:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0 font-medium text-gray-700 dark:text-gray-300 leading-relaxed mb-6 lg:mb-8">
-          Passionné par le développement web et mobile, j'ai construit mon
-          expérience en explorant à la fois le Front-end et le Back-end.
-          J'accorde une attention particulière à l'aspect visuel des interfaces,
-          que je conçois de manière moderne pour offrir la meilleure expérience
-          utilisateur possible. Curieux, autonome et toujours en quête de
-          nouveauté, j'aime découvrir et intégrer de nouvelles technologies.
-          Tout en étant proactif, je valorise profondément l'intégrité, le
-          partage et la collaboration en équipe. Mon objectif est d'évoluer au
-          sein d'une agence dynamique en tant que développeur web et mobile
-          junior, afin de contribuer à des projets innovants et porteurs de
-          sens.
+          <p
+            class="text-base sm:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0 font-medium text-gray-700 dark:text-gray-300 leading-relaxed mb-6 lg:mb-8"
+          >
+            Passionné par le développement web et mobile, j'ai construit mon
+            expérience en explorant à la fois le Front-end et le Back-end.
+            J'accorde une attention particulière à l'aspect visuel des
+            interfaces, que je conçois de manière moderne pour offrir la
+            meilleure expérience utilisateur possible. Curieux, autonome et
+            toujours en quête de nouveauté, j'aime découvrir et intégrer de
+            nouvelles technologies. Tout en étant proactif, je valorise
+            profondément l'intégrité, le partage et la collaboration en équipe.
+            Mon objectif est d'évoluer au sein d'une agence dynamique en tant
+            que développeur web et mobile junior, afin de contribuer à des
+            projets innovants et porteurs de sens.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-6 sm:px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 w-full sm:w-auto flex items-center justify-center gap-2">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-              <span>Contactez moi</span>
-            </button>
-            <button class="bg-transparent hover:bg-yellow-400 text-yellow-400 hover:text-gray-900 font-semibold py-3 px-6 sm:px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 border-2 border-yellow-400 w-full sm:w-auto flex items-center justify-center gap-2">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-              </svg>
-              <span>Mon CV</span>
-            </button>
+          
+            <div
+              class=""
+            >
+            <div class="flex gap-4 items-center justify-center">
+              <Button
+                text="Contactez moi"
+                variant="primary"
+                size="md"
+                icon="<path d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/>"
+                @click="scrollToContact"
+              />
+              <Button
+                text="Mon CV."
+                variant="secondary"
+                size="md"
+                icon="<path d='M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z'/>"
+                @click="downloadCV"
+              />
+            </div>
           </div>
         </div>
-        
+
         <!-- Image -->
         <div class="flex justify-center lg:justify-end order-1 lg:order-2">
           <div class="relative">
-            <div class="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] xl:w-96 xl:h-[480px] overflow-hidden rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div
+              class="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] xl:w-96 xl:h-[480px] overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500"
+            >
               <img
                 src="/src/assets/hero.jpg"
                 alt="Rachade OREKAN - Développeur Web"
@@ -63,23 +87,36 @@
 
 <script setup>
 // Animation d'entrée au scroll
-import { onMounted } from 'vue'
+import { onMounted } from "vue";
+import Button from "../UI/Button.vue";
+
+const scrollToContact = () => {
+  const contactSection = document.querySelector("#contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+const downloadCV = () => {
+  // Logique pour télécharger le CV
+  console.log("Téléchargement du CV");
+};
 
 onMounted(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in-up')
+          entry.target.classList.add("animate-fade-in-up");
         }
-      })
+      });
     },
     { threshold: 0.1 }
-  )
-  
-  const elements = document.querySelectorAll('.hero-animate')
-  elements.forEach((el) => observer.observe(el))
-})
+  );
+
+  const elements = document.querySelectorAll(".hero-animate");
+  elements.forEach((el) => observer.observe(el));
+});
 </script>
 
 <style scoped>

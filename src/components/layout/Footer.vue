@@ -4,7 +4,7 @@
       <div class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
         <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-yellow-300 text-center sm:text-left">
           <span class="hidden sm:inline">Rachade OREKAN</span>
-          <span class="sm:hidden">R.O</span>
+          <span class="sm:hidden">Rachade OREKAN</span>
         </div>
         <div class="text-center text-xs sm:text-sm lg:text-base text-gray-300">
           © Copyright 2025. Tous droits réservés.

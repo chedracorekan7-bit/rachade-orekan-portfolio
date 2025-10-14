@@ -6,7 +6,7 @@
           <!-- Logo -->
           <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             <span class="hidden sm:inline">Rachade OREKAN</span>
-            <span class="sm:hidden">R.O</span>
+            <span class="sm:hidden">Rachade OREKAN</span>
           </div>
 
           <!-- Desktop Navigation -->
