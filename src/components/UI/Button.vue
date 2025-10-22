@@ -2,6 +2,7 @@
   <button
     :type="type"
     :class="buttonClasses"
+    :disabled="disabled"
     @click="$emit('click', $event)"
   >
     <svg v-if="icon" :class="iconClasses" fill="currentColor" viewBox="0 0 24 24" v-html="icon"></svg>
@@ -18,7 +19,8 @@ const props = defineProps({
   size: { type: String, default: 'md' },
   icon: { type: String, default: '' },
   type: { type: String, default: 'button' },
-  fullWidth: { type: Boolean, default: false }
+  fullWidth: { type: Boolean, default: false },
+  disabled: { type: Boolean, default: false }
 })
 
 defineEmits(['click'])
@@ -54,7 +56,8 @@ const widthClasses = computed(() => {
 })
 
 const buttonClasses = computed(() => {
-  return [baseClasses, variantClasses.value, sizeClasses.value, widthClasses.value].join(' ')
+  const disabledClasses = props.disabled ? 'opacity-60 cursor-not-allowed pointer-events-none transform-none hover:shadow-none' : ''
+  return [baseClasses, variantClasses.value, sizeClasses.value, widthClasses.value, disabledClasses].join(' ')
 })
 
 const iconClasses = computed(() => {

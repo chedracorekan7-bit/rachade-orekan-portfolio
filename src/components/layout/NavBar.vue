@@ -115,7 +115,7 @@ const isMobileMenuOpen = ref(false)
 
 const Menu = ref([
   { name: "Services", href: "#services", id: "services" },
-  { name: "Competences", href: "#competences", id: "competences" },
+  { name: "Compétences", href: "#compétences", id: "compétences" },
   { name: "Cursus", href: "#pourquoi", id: "pourquoi" },
   { name: "Projets", href: "#projets", id: "projets" },
   { name: "Contacts", href: "#contact", id: "contact" },

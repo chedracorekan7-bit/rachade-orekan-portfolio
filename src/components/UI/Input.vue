@@ -12,8 +12,11 @@
       <component 
         :is="type === 'textarea' ? 'textarea' : 'input'"
         :id="id"
+        :name="name || id"
         :placeholder="placeholder"
         :rows="type === 'textarea' ? rows : undefined"
+        :value="modelValue"
+        @input="onInput"
         class="w-full rounded-lg bg-gray-900 dark:bg-gray-800 text-white placeholder-gray-400 p-3 sm:p-4 text-sm sm:text-base
         focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 transition-all duration-300 resize-none"
       />
@@ -21,11 +24,21 @@
   </div>
 </template>
 <script setup>
-defineProps({
+import { defineProps, defineEmits } from 'vue'
+
+const props = defineProps({
   id: { type: String, required: true },
   label: { type: String, required: true },
   type: { type: String, default: 'text' },
   placeholder: { type: String, default: '' },
-  rows: { type: Number, default: 4 }
+  rows: { type: Number, default: 4 },
+  name: { type: String, default: '' },
+  modelValue: { type: [String, Number], default: '' }
 })
+
+const emit = defineEmits(['update:modelValue'])
+
+const onInput = (e) => {
+  emit('update:modelValue', e?.target?.value ?? '')
+}
 </script>

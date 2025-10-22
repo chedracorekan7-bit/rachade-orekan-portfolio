@@ -4,7 +4,13 @@
     <div class="py-6 sm:py-8 lg:py-12 xl:py-16 px-4 sm:px-6 lg:px-8 mx-auto max-w-5xl">
       <div class="relative">
         <!-- Formulaire -->
-        <form class="space-y-8">
+        <form class="space-y-8" @submit.prevent="handleSubmit">
+          <div v-if="notification.text" :class="[
+              'rounded-lg p-4 border',
+              notification.type === 'success' ? 'bg-green-50 border-green-200 text-green-800' : 'bg-red-50 border-red-200 text-red-800'
+            ]">
+            {{ notification.text }}
+          </div>
           <div v-for="(item, index) in inputs" :key="index">
             <Input
               :id="item.id"
@@ -12,6 +18,8 @@
               :type="item.type"
               :placeholder="item.placeholder"
               :rows="item.rows"
+              v-model="form[item.id]"
+              :name="item.id"
             />
           </div>
           
@@ -20,12 +28,12 @@
             <!-- Bouton Envoyer -->
             <div class="order-2 lg:order-1 w-[100px] sm:w-auto">
               <Button 
-                text="Envoyer" 
+                :text="loading ? 'Envoi…' : 'Envoyer'" 
                 variant="primary" 
                 size="md"
                 type="submit"
                 icon="<path d='M2.01 21L23 12 2.01 3 2 10l15 2-15 2z'/>"
-                @click="handleSubmit"
+                :disabled="loading"
               />
             </div>
 
@@ -63,10 +71,53 @@ import Input from "../UI/Input.vue";
 import Button from "../UI/Button.vue";
 import { ref } from "vue";
 
-const handleSubmit = (event) => {
-  event.preventDefault()
-  // Logique de soumission du formulaire
-  console.log('Formulaire soumis')
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xrbyrjng';
+const loading = ref(false)
+const notification = ref({ type: '', text: '' })
+
+const form = ref({
+  email: '',
+  object: '',
+  message: ''
+})
+
+const handleSubmit = async () => {
+  if (loading.value) return
+  notification.value = { type: '', text: '' }
+
+  // Validation minimale
+  if (!form.value.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)) {
+    notification.value = { type: 'error', text: "Veuillez saisir un email valide." }
+    return
+  }
+  if (!form.value.object || !form.value.message) {
+    notification.value = { type: 'error', text: "Veuillez remplir l'objet et le message." }
+    return
+  }
+
+  loading.value = true
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        email: form.value.email,
+        subject: form.value.object,
+        message: form.value.message
+      })
+    })
+
+    if (res.ok) {
+      notification.value = { type: 'success', text: "Votre message a été envoyé avec succès. Merci !" }
+      form.value = { email: '', object: '', message: '' }
+    } else {
+      notification.value = { type: 'error', text: "Une erreur s'est produite lors de l'envoi. Réessayez plus tard." }
+    }
+  } catch (e) {
+    notification.value = { type: 'error', text: "Impossible de contacter le service d'envoi. Vérifiez votre connexion." }
+  } finally {
+    loading.value = false
+  }
 }
 
 // Solution finale qui fonctionne dans tous les cas

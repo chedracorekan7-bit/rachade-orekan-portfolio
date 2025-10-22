@@ -1,6 +1,6 @@
 <template>
-  <section class="mt-16 sm:mt-24 lg:mt-32 scroll-mt-16" id="competences">
-    <SectionHeader title="Mes Competences" />
+  <section class="mt-16 sm:mt-24 lg:mt-32 scroll-mt-16" id="compétences">
+    <SectionHeader title="Mes Compétences" />
     <div class="mt-12 sm:mt-16 lg:mt-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
@@ -40,13 +40,13 @@ const skills = ref([
   },
   {
     percentage: 92,
-    title: 'Java',
+    title: 'Tailwind',
     bgGradient: 'to-[#59c37899] from-[#1f1e1c99]',
     textColor: '#59c378'
   },
   {
     percentage: 88,
-    title: 'Photoshop',
+    title: 'CSS',
     bgGradient: 'to-[#dd584f99] from-[#1f1e1c99]',
     textColor: '#dd584f'
   },
@@ -58,7 +58,7 @@ const skills = ref([
   },
   {
     percentage: 43,
-    title: 'WordPress',
+    title: 'PHP',
     bgGradient: 'to-[#00a9ff99] from-[#1f1e1c99]',
     textColor: '#00a9ff'
   },

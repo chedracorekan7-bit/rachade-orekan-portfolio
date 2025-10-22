@@ -99,7 +99,13 @@ const scrollToContact = () => {
 
 const downloadCV = () => {
   // Logique pour télécharger le CV
-  console.log("Téléchargement du CV");
+  const fileName = "CV pro.pdf";
+  const link = document.createElement("a");
+  link.href = `/${encodeURIComponent(fileName)}`;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 onMounted(() => {

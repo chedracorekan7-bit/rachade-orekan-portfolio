@@ -1,5 +1,4 @@
-
 User-agent: *
 Allow: /
 
-Sitemap: https://ton-domaine.com/sitemap.xml
+Sitemap: https://rachade-orekan-portfolio.vercel.app/sitemap.xml
