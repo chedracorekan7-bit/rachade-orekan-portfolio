@@ -23,7 +23,7 @@
                 >
                   {{ item.name }}
                   <span :class="[
-                    'absolute -bottom-1 left-0 h-0.5 bg-yellow-400 transition-all duration-300',
+                    'absolute -bottom-1 -translate-x-1/2 animate-[expand_0.6s_ease-out_forwards] left-1/2  h-0.5 bg-yellow-400 transition-all duration-300',
                     activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
                   ]"></span>
                 </a>
@@ -137,3 +137,7 @@ const handleMobileMenuClick = (href) => {
   isMobileMenuOpen.value = false
 }
 </script>
+
+<style scoped>
+
+</style>
