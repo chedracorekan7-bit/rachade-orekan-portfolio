@@ -21,13 +21,13 @@
            </footer>
 
            <!-- Action Section -->
-           <div class="px-4 sm:px-6 pb-3 sm:pb-4 flex justify-between items-center">
-            <a :href="liveLink" v-if="liveLink" class="text-secondary font-semibold hover:underline text-xs sm:text-sm transition-colors duration-200"></a>
-            <a :href="codeLink" v-if="codeLink" class="text-secondary font-semibold hover:underline text-xs sm:text-sm transition-colors duration-200">Code</a>
+           <div class="px-4 sm:px-6 pb-3 sm:pb-4  justify-center items-center inline ">
+            <a :href="codeLink" v-if="codeLink" class="text-gray-300 hover:text-yellow-400 font-semibold justify-center inline-flex gap-2 mb-2 hover:underline text-xs sm:text-sm transition-colors duration-200">Accéder au projet <svg xmlns="http://www.w3.org/2000/svg" width="20"  height="20" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 19L19 6m0 0v12.48M19 6H6.52"/></svg> </a>
            </div>
     </article>
 </template>
 <script setup>
+import { Icon } from "@iconify/vue";
 defineProps({
     title:{
     type: String,

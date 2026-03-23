@@ -66,7 +66,6 @@
 <script setup>
 import SectionHeader from "../UI/SectionHeader.vue";
 import ProjectCard from "../UI/ProjectCard.vue";
-import { Icon } from "@iconify/vue";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
@@ -76,6 +75,7 @@ import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { ref } from "vue";
 
 // Import des images
+import projet0 from "@/assets/img/projet0.png";
 import projet1 from "@/assets/img/projet1.jpg";
 import projet2 from "@/assets/img/projet2.jpg";
 import projet3 from "@/assets/img/projet3.jpg";
@@ -103,6 +103,16 @@ const navigationOptions = {
 };
 
 const projects = ref([
+  {
+    title: "Site Ecommerce professionnelle",
+    description:
+      "Plateforme de shopping en ligne pour articles électroménagers, beauté, sport...",
+    image: projet0,
+    tags: ["Vue.js", "Tailwind Css", "PHP"],
+    liveLink: "https://yubuy.vercel.app",
+    codeLink: "https://yubuy.vercel.app",
+  },
+
   {
     title: "Design UI",
     description:
