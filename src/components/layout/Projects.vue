@@ -95,6 +95,7 @@ import projet16 from "@/assets/img/projet16.PNG";
 import projetA from "@/assets/img/projetA.jpg";
 import projetB from "@/assets/img/projetB.jpg";
 import projet8A from "@/assets/img/projet8A.jpg";
+import logo from "@/assets/img/logo.png";
 
 // Definir les options de navigation
 const navigationOptions = {
@@ -111,6 +112,16 @@ const projects = ref([
     tags: ["Vue.js", "Tailwind Css", "PHP"],
     liveLink: "https://yubuy.vercel.app",
     codeLink: "https://yubuy.vercel.app",
+  },
+
+  {
+    title: "Landing page prenium",
+    description:
+      "Landing page prenium pour les voitures de sports et automobiles de luxe.",
+    image: logo,
+    tags: ["Vue.js", "Tailwind Css", "GSAP"],
+    liveLink: "https://cinematic-landpage.vercel.app",
+    codeLink: "https://cinematic-landpage.vercel.app",
   },
 
   {
