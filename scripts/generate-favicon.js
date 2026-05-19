@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 async function main() {
   const projectRoot = path.resolve(__dirname, "..");
-  const source = path.join(projectRoot, "public", "preview.jpg");
+  const source = path.join(projectRoot, "src", "assets", "hero.jpg");
   
   // Différentes tailles pour une compatibilité maximale
   const sizes = [
