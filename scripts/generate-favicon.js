@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import url from "node:url";
 import sharp from "sharp";
+import pngToIco from "png-to-ico";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,6 +27,17 @@ async function main() {
       .png({ quality: 100 })
       .toFile(output);
     console.log(`Généré: ${output}`);
+  }
+  
+  // Générer le favicon.ico à partir du favicon.png (192px)
+  try {
+    const pngPath = path.join(projectRoot, "public", "favicon.png");
+    const icoPath = path.join(projectRoot, "public", "favicon.ico");
+    const buf = await pngToIco(pngPath);
+    await fs.writeFile(icoPath, buf);
+    console.log(`Généré: ${icoPath}`);
+  } catch (err) {
+    console.error("Erreur lors de la génération de favicon.ico:", err);
   }
 }
 
