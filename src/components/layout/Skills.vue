@@ -39,31 +39,31 @@ const skills = ref([
     textColor: '#FFE600'
   },
   {
-    percentage: 92,
+    percentage: 90,
     title: 'Tailwind',
     bgGradient: 'to-[#59c37899] from-[#1f1e1c99]',
     textColor: '#59c378'
   },
   {
-    percentage: 88,
+    percentage: 100,
     title: 'CSS',
     bgGradient: 'to-[#dd584f99] from-[#1f1e1c99]',
     textColor: '#dd584f'
   },
   {
-    percentage: 72,
+    percentage: 100,
     title: 'Vue.js',
     bgGradient: 'to-[#ff9a0099] from-[#1f1e1c99]',
     textColor: '#ff9a00'
   },
   {
-    percentage: 43,
+    percentage: 80,
     title: 'PHP',
     bgGradient: 'to-[#00a9ff99] from-[#1f1e1c99]',
     textColor: '#00a9ff'
   },
   {
-    percentage: 40,
+    percentage: 90,
     title: 'React.js',
     bgGradient: 'to-[#9e00ff99] from-[#1f1e1c99]',
     textColor: '#ad00ff'
