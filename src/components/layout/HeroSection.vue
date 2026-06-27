@@ -21,9 +21,7 @@
             class="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
           >
             <span class="block sm:inline">Salut, Je m'appelle</span> &nbsp;
-            <div
-              class="text-secondary stroke-text text-stroke-primary dark:text-stroke-secondary"
-            >
+            <div class="name-gradient">
               Rachade.
             </div>
           </h1>
@@ -139,5 +137,10 @@ onMounted(() => {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.name-gradient {
+  color: #fbbf24;
+  display: inline-block;
 }
 </style>
