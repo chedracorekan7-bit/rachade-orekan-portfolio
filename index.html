@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta
-      name="google-site-verification"
-      content="o0Gc57emPlDBUCTPQZzq5PI0JkBE0KUaqynRAY84aes"
-    />
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -58,6 +55,10 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -103,15 +104,11 @@
   </head>
 
   <body>
-    <div id="app"></div>
-
-    <script type="module" src="/src/main.js"></script>
     <script>
-      // Appliquer le thème avant le chargement de Vue pour éviter le flash
       const theme = localStorage.getItem("theme") || "dark";
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
+      if (theme === "dark") document.documentElement.classList.add("dark");
     </script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
